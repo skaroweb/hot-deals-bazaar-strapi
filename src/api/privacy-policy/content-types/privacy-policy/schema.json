@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "privacy_policies",
+  "info": {
+    "singularName": "privacy-policy",
+    "pluralName": "privacy-policies",
+    "displayName": "Privacy Policy"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "text"
+    },
+    "Editor": {
+      "type": "richtext"
+    },
+    "Meta_title": {
+      "type": "text"
+    },
+    "Meta_description": {
+      "type": "text"
+    },
+    "Featured_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

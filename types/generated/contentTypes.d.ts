@@ -676,6 +676,171 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiBlogBlog extends Schema.CollectionType {
+  collectionName: 'blogs';
+  info: {
+    singularName: 'blog';
+    pluralName: 'blogs';
+    displayName: 'Blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.Text;
+    ClassicEditor: Attribute.RichText;
+    Meta_title: Attribute.Text;
+    Meta_description: Attribute.String;
+    Featured_image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDisclaimerDisclaimer extends Schema.SingleType {
+  collectionName: 'disclaimers';
+  info: {
+    singularName: 'disclaimer';
+    pluralName: 'disclaimers';
+    displayName: 'Disclaimer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.Text;
+    Editor: Attribute.RichText;
+    Meta_title: Attribute.Text;
+    Meta_description: Attribute.Text;
+    Featured_image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::disclaimer.disclaimer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::disclaimer.disclaimer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPrivacyPolicyPrivacyPolicy extends Schema.SingleType {
+  collectionName: 'privacy_policies';
+  info: {
+    singularName: 'privacy-policy';
+    pluralName: 'privacy-policies';
+    displayName: 'Privacy Policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.Text;
+    Editor: Attribute.RichText;
+    Meta_title: Attribute.Text;
+    Meta_description: Attribute.Text;
+    Featured_image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::privacy-policy.privacy-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProductProduct extends Schema.CollectionType {
+  collectionName: 'products';
+  info: {
+    singularName: 'product';
+    pluralName: 'products';
+    displayName: 'Product';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    title: Attribute.Text;
+    dealPrice: Attribute.String;
+    originalPrice: Attribute.String;
+    platform: Attribute.String;
+    discount: Attribute.String;
+    productLink: Attribute.Text;
+    affiliate_product_link: Attribute.Text;
+    productimage: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTermsAndConditionTermsAndCondition
+  extends Schema.SingleType {
+  collectionName: 'terms_and_conditions';
+  info: {
+    singularName: 'terms-and-condition';
+    pluralName: 'terms-and-conditions';
+    displayName: 'Terms and Condition';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.Text;
+    Editor: Attribute.RichText;
+    Meta_title: Attribute.Text;
+    Meta_description: Attribute.Text;
+    Featured_image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::terms-and-condition.terms-and-condition',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::terms-and-condition.terms-and-condition',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Shared {
     export interface ContentTypes {
@@ -692,6 +857,11 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::blog.blog': ApiBlogBlog;
+      'api::disclaimer.disclaimer': ApiDisclaimerDisclaimer;
+      'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
+      'api::product.product': ApiProductProduct;
+      'api::terms-and-condition.terms-and-condition': ApiTermsAndConditionTermsAndCondition;
     }
   }
 }

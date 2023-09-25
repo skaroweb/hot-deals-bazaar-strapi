@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "terms_and_conditions",
+  "info": {
+    "singularName": "terms-and-condition",
+    "pluralName": "terms-and-conditions",
+    "displayName": "Terms and Condition"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "text"
+    },
+    "Editor": {
+      "type": "richtext"
+    },
+    "Meta_title": {
+      "type": "text"
+    },
+    "Meta_description": {
+      "type": "text"
+    },
+    "Featured_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

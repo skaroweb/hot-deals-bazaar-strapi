@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "dealPrice": {
+      "type": "string"
+    },
+    "originalPrice": {
+      "type": "string"
+    },
+    "platform": {
+      "type": "string"
+    },
+    "discount": {
+      "type": "string"
+    },
+    "productLink": {
+      "type": "text"
+    },
+    "affiliate_product_link": {
+      "type": "text"
+    },
+    "productimage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
