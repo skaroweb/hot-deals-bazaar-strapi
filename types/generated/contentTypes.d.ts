@@ -682,6 +682,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     singularName: 'blog';
     pluralName: 'blogs';
     displayName: 'Blog';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -690,8 +691,9 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     Title: Attribute.Text;
     ClassicEditor: Attribute.RichText;
     Meta_title: Attribute.Text;
-    Meta_description: Attribute.String;
+    Meta_description: Attribute.Text;
     Featured_image: Attribute.Media;
+    Featured_image_url: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -776,6 +778,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     singularName: 'product';
     pluralName: 'products';
     displayName: 'Product';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -789,6 +792,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     productLink: Attribute.Text;
     affiliate_product_link: Attribute.Text;
     productimage: Attribute.Media;
+    ProductImgUrl: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
